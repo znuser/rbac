@@ -9,7 +9,7 @@ use ZnUser\Rbac\Domain\Interfaces\Repositories\InheritanceRepositoryInterface;
 class InheritanceRepository extends BaseFileCrudRepository implements InheritanceRepositoryInterface
 {
 
-    private $fileName = __DIR__ . '/../../../../../../../../config/rbac_inheritance.php';
+    private $fileName = __DIR__ . '/../../../../../../../fixtures/rbac_inheritance.php';
     
     public function getEntityClass(): string
     {
@@ -24,5 +24,10 @@ class InheritanceRepository extends BaseFileCrudRepository implements Inheritanc
     public function fileName(): string
     {
         return $this->fileName;
+    }
+
+    protected function getItems(): array
+    {
+        return parent::getItems()['collection'];
     }
 }
