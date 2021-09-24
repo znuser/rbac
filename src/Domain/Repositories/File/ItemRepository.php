@@ -11,13 +11,25 @@ use ZnCore\Domain\Base\Repositories\BaseFileCrudRepository;
 class ItemRepository extends BaseFileCrudRepository implements ItemRepositoryInterface
 {
 
+    private $fileName = __DIR__ . '/../../../../../../../fixtures/rbac_item.php';
+
     public function getEntityClass(): string
     {
         return ItemEntity::class;
     }
 
+    public function setFileName(string $fileName)
+    {
+        $this->fileName = $fileName;
+    }
+
     public function fileName(): string
     {
-        return __DIR__ . '/../../../../../../../fixtures/rbac_item.php';
+        return $this->fileName;
+    }
+
+    protected function getItems(): array
+    {
+        return parent::getItems()['collection'];
     }
 }
