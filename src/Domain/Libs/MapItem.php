@@ -3,7 +3,11 @@
 namespace ZnUser\Rbac\Domain\Libs;
 
 use Illuminate\Support\Collection;
+use ZnCore\Base\Exceptions\NotInstanceOfException;
+use ZnCore\Base\Helpers\ClassHelper;
 use ZnCore\Base\Helpers\EnumHelper;
+use ZnCore\Base\Interfaces\GetLabelsInterface;
+use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
 use ZnUser\Rbac\Domain\Entities\InheritanceEntity;
 use ZnUser\Rbac\Domain\Entities\ItemEntity;
 use ZnUser\Rbac\Domain\Enums\ItemTypeEnum;
@@ -54,6 +58,7 @@ class MapItem
             $label = EnumHelper::getLabel($enumClassName, $itemName);
             $this->addRole($itemName, $label);
         }
+        $this->assignInheritance($enumClassName);
     }
 
     protected function loadPermissionsFromEnum(string $enumClassName)
@@ -63,6 +68,20 @@ class MapItem
             $label = EnumHelper::getLabel($enumClassName, $itemName);
             $this->addPermission($itemName, $label);
         }
+        $this->assignInheritance($enumClassName);
+    }
+
+    protected function assignInheritance(string $enumClassName) {
+        try {
+            ClassHelper::isInstanceOf($enumClassName, GetRbacInheritanceInterface::class, true);
+            /** @var GetRbacInheritanceInterface $enumClassName */
+            $inheritance = $enumClassName::getInheritance();
+            foreach ($inheritance as $parentName => $children) {
+                foreach ($children as $childName) {
+                    $this->addChild($parentName, $childName);
+                }
+            }
+        } catch (NotInstanceOfException $e) {}
     }
 
     protected function addChildren(string $parentName, array $childNames)
