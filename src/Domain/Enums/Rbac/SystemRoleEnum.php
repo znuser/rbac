@@ -10,6 +10,7 @@ class SystemRoleEnum implements GetLabelsInterface
     const GUEST = 'rGuest';
     const USER = 'rUser';
     const ADMINISTRATOR = 'rAdministrator';
+    const ROOT = 'rRoot';
 
     public static function getLabels()
     {
@@ -17,6 +18,7 @@ class SystemRoleEnum implements GetLabelsInterface
             self::GUEST => 'Гость системы',
             self::USER => 'Идентифицированный пользователь',
             self::ADMINISTRATOR => 'Администратор системы',
+            self::ROOT => 'Корневой администратор системы',
         ];
     }
 }
