@@ -38,7 +38,7 @@ class InfoController extends BaseWebController implements ControllerAccessInterf
     )
     {
         //dd($roleService->all());
-        dd($managerService->allNestedItemsByRoleName(SystemRoleEnum::ADMINISTRATOR));
+        //dd($managerService->allNestedItemsByRoleName(SystemRoleEnum::ADMINISTRATOR));
         $this->setFormManager($formManager);
         $this->setLayoutManager($layoutManager);
         $this->setUrlGenerator($urlGenerator);

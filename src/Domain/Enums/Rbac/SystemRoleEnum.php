@@ -26,7 +26,7 @@ class SystemRoleEnum implements GetLabelsInterface, GetRbacInheritanceInterface
     public static function getInheritance()
     {
         return [
-            /*self::USER => [
+            self::USER => [
                 self::GUEST,
             ],
             self::ADMINISTRATOR => [
@@ -34,7 +34,7 @@ class SystemRoleEnum implements GetLabelsInterface, GetRbacInheritanceInterface
             ],
             self::ROOT => [
                 self::ADMINISTRATOR,
-            ],*/
+            ],
         ];
     }
 }

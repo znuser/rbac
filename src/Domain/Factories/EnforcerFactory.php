@@ -24,14 +24,14 @@ class EnforcerFactory
         return $enforcer;
     }
 
-    public function createEnforcerByMap($map): ManagementEnforcer
+    /*public function createEnforcerByMap($map): ManagementEnforcer
     {
         $enforcer = $this->createEnforcer();
         $roleManager = $this->createRoleManager($map);
         $enforcer->setRoleManager($roleManager);
         //$enforcer->savePolicy();
         return $enforcer;
-    }
+    }*/
 
     public function createEnforcerByRoleManager(RoleManagerContract $roleManager): ManagementEnforcer
     {

@@ -2,15 +2,14 @@
 
 namespace ZnUser\Rbac\Domain\Repositories\File;
 
-use ZnUser\Rbac\Domain\Entities\InheritanceEntity;
-use ZnUser\Rbac\Domain\Factories\EnforcerFactory;
-use ZnUser\Rbac\Domain\Interfaces\Repositories\ManagerRepositoryInterface;
 use Casbin\ManagementEnforcer;
-use Symfony\Component\Cache\Adapter\AbstractAdapter;
 use Symfony\Component\Cache\Adapter\AdapterInterface;
 use Symfony\Contracts\Cache\ItemInterface;
 use ZnCore\Domain\Interfaces\Libs\EntityManagerInterface;
 use ZnCore\Domain\Traits\EntityManagerTrait;
+use ZnUser\Rbac\Domain\Entities\InheritanceEntity;
+use ZnUser\Rbac\Domain\Factories\EnforcerFactory;
+use ZnUser\Rbac\Domain\Interfaces\Repositories\ManagerRepositoryInterface;
 
 class ManagerRepository implements ManagerRepositoryInterface
 {
@@ -25,12 +24,16 @@ class ManagerRepository implements ManagerRepositoryInterface
         $this->cache = $cache;
     }
 
-    public function getEnforcer(): ManagementEnforcer
+    public function allItemsByRoleName(string $roleName): array
+    {
+        return $this->getEnforcer()->getImplicitRolesForUser($roleName);
+    }
+
+    private function getEnforcer(): ManagementEnforcer
     {
         /** @var ItemInterface $item */
         $item = $this->cache->getItem('rbac.enforcer');
         $serializedRoleManager = $item->get();
-        $enforcerFactory = new EnforcerFactory;
         if (empty($serializedRoleManager)) {
             $enforcer = $this->forgeRoleManager();
             $serializedRoleManager = serialize($enforcer->getRoleManager());
@@ -38,6 +41,7 @@ class ManagerRepository implements ManagerRepositoryInterface
             $this->cache->save($item);
         } else {
             $roleManager = unserialize($serializedRoleManager);
+            $enforcerFactory = new EnforcerFactory;
             $enforcer = $enforcerFactory->createEnforcerByRoleManager($roleManager);
         }
         return $enforcer;

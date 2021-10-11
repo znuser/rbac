@@ -3,8 +3,10 @@
 namespace ZnUser\Rbac\Domain\Enums;
 
 use ZnCore\Base\Interfaces\GetLabelsInterface;
+use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
+use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
 
-class RbacRoleEnum implements GetLabelsInterface
+class RbacRoleEnum implements GetLabelsInterface, GetRbacInheritanceInterface
 {
 
     const AUTHORIZED = '@';
@@ -18,4 +20,15 @@ class RbacRoleEnum implements GetLabelsInterface
         ];
     }
 
+    public static function getInheritance()
+    {
+        return [
+            self::AUTHORIZED => [
+                SystemRoleEnum::GUEST,
+            ],
+            SystemRoleEnum::USER => [
+                self::AUTHORIZED,
+            ],
+        ];
+    }
 }

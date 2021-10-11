@@ -18,6 +18,7 @@ class ManagerService implements ManagerServiceInterface
     private $enforcer;
     private $authService;
     private $assignmentService;
+    private $managerRepository;
     private $defaultRoles = [
         SystemRoleEnum::GUEST,
     ];
@@ -28,7 +29,8 @@ class ManagerService implements ManagerServiceInterface
         AssignmentServiceInterface $assignmentService
     )
     {
-        $this->enforcer = $managerRepository->getEnforcer();
+        $this->managerRepository = $managerRepository;
+        //$this->enforcer = $managerRepository->getEnforcer();
         $this->authService = $authService;
         $this->assignmentService = $assignmentService;
     }
@@ -73,16 +75,17 @@ class ManagerService implements ManagerServiceInterface
         return !empty($intersect);
     }
 
-    public function allNestedItemsByRoleName(string $roleName): array
+    /*protected function allNestedItemsByRoleName(string $roleName): array
     {
-        return $this->enforcer->getImplicitRolesForUser($roleName);
-    }
+        return $this->managerRepository->allNestedItemsByRoleName($roleName);
+//        return $this->enforcer->getImplicitRolesForUser($roleName);
+    }*/
 
     public function allNestedItemsByRoleNames(array $roleNames): array
     {
         $all = [];
         foreach ($roleNames as $roleName) {
-            $nested = $this->allNestedItemsByRoleName($roleName);
+            $nested = $this->managerRepository->allItemsByRoleName($roleName);
             $all = array_merge($all, $nested);
         }
         return $all;
