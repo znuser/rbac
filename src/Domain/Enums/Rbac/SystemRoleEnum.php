@@ -3,8 +3,9 @@
 namespace ZnUser\Rbac\Domain\Enums\Rbac;
 
 use ZnCore\Base\Interfaces\GetLabelsInterface;
+use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
 
-class SystemRoleEnum implements GetLabelsInterface
+class SystemRoleEnum implements GetLabelsInterface, GetRbacInheritanceInterface
 {
 
     const GUEST = 'rGuest';
@@ -19,6 +20,21 @@ class SystemRoleEnum implements GetLabelsInterface
             self::USER => 'Идентифицированный пользователь',
             self::ADMINISTRATOR => 'Администратор системы',
             self::ROOT => 'Корневой администратор системы',
+        ];
+    }
+
+    public static function getInheritance()
+    {
+        return [
+            /*self::USER => [
+                self::GUEST,
+            ],
+            self::ADMINISTRATOR => [
+                self::USER,
+            ],
+            self::ROOT => [
+                self::ADMINISTRATOR,
+            ],*/
         ];
     }
 }
