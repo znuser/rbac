@@ -55,7 +55,7 @@ class ManagerService implements ManagerServiceInterface
             $roleNames = $this->getDefaultRoles();
             $isCan = $this->isCanByRoleNames($roleNames, $permissionNames);
             if (!$isCan) {
-                throw new UnauthorizedException();
+                throw $e;
             }
         }
     }
