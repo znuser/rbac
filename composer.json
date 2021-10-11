@@ -10,7 +10,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    
+    "znfork/casbin": "dev-master"
   },
   "autoload": {
     "psr-4": {
