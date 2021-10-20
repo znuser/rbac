@@ -3,8 +3,9 @@
 namespace ZnUser\Rbac\Domain\Enums\Rbac;
 
 use ZnCore\Base\Interfaces\GetLabelsInterface;
+use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
 
-class ExtraPermissionEnum implements GetLabelsInterface
+class ExtraPermissionEnum implements GetLabelsInterface, GetRbacInheritanceInterface
 {
 
     const ADMIN_ONLY = 'oAdminOnly';
@@ -26,6 +27,15 @@ class ExtraPermissionEnum implements GetLabelsInterface
             self::ADMIN_ONLY_UPDATE => 'Доступ только для админа. Редактирование',
             self::ADMIN_ONLY_DELETE => 'Доступ только для админа. Удаление',
 //            self::ADMIN_ONLY_RESTORE => 'Доступ только для админа. Восстановление',
+        ];
+    }
+
+    public static function getInheritance()
+    {
+        return [
+            SystemRoleEnum::ROOT => [
+                self::ADMIN_ONLY
+            ],
         ];
     }
 }
