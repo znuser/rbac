@@ -32,7 +32,9 @@ class ItemEntity implements ValidateEntityByMetadataInterface, UniqueInterface, 
 
     public function unique() : array
     {
-        return [];
+        return [
+            ['name'],
+        ];
     }
 
     public function setId($value) : void

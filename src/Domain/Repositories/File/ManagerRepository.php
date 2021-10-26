@@ -8,6 +8,7 @@ use Symfony\Contracts\Cache\ItemInterface;
 use ZnCore\Domain\Interfaces\Libs\EntityManagerInterface;
 use ZnCore\Domain\Traits\EntityManagerTrait;
 use ZnUser\Rbac\Domain\Entities\InheritanceEntity;
+use ZnUser\Rbac\Domain\Enums\RbacCacheEnum;
 use ZnUser\Rbac\Domain\Factories\EnforcerFactory;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\ManagerRepositoryInterface;
 
@@ -32,7 +33,7 @@ class ManagerRepository implements ManagerRepositoryInterface
     private function getEnforcer(): ManagementEnforcer
     {
         /** @var ItemInterface $item */
-        $item = $this->cache->getItem('rbac.enforcer');
+        $item = $this->cache->getItem(RbacCacheEnum::ENFORCER);
         $serializedRoleManager = $item->get();
         if (empty($serializedRoleManager)) {
             $enforcer = $this->forgeRoleManager();
