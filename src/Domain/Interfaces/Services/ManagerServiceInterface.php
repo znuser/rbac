@@ -8,6 +8,13 @@ interface ManagerServiceInterface
 {
 
     /**
+     * Имеет ли права текущий пользователь
+     * @param array $permissionNames
+     * @return bool
+
+    public function iCan(array $permissionNames): bool;*/
+
+    /**
      * Проверка полномочий текущего пользователя
      * @param array $permissionNames
      * @throws ForbiddenException

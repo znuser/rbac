@@ -2,6 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Services;
 
+use App\Organization\Domain\Enums\Rbac\OrganizationOrganizationPermissionEnum;
 use Casbin\ManagementEnforcer;
 use ZnBundle\User\Domain\Exceptions\UnauthorizedException;
 use ZnBundle\User\Domain\Interfaces\Services\AuthServiceInterface;
@@ -43,6 +44,16 @@ class ManagerService implements ManagerServiceInterface
     public function setDefaultRoles(array $defaultRoles): void
     {
         $this->defaultRoles = $defaultRoles;
+    }
+
+    public function iCan(array $permissionNames): bool
+    {
+        try {
+            $this->checkMyAccess($permissionNames);
+            return true;
+        } catch (ForbiddenException $e) {
+            return false;
+        }
     }
 
     public function checkMyAccess(array $permissionNames): void
