@@ -2,6 +2,9 @@
 
 use ZnCore\Base\Helpers\EnvHelper;
 use Psr\Container\ContainerInterface;
+use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
+use ZnUser\Rbac\Domain\Interfaces\Services\ManagerServiceInterface;
+use ZnUser\Rbac\Domain\Services\ManagerService;
 
 $isDbDriver = true;
 //$isDbDriver = !EnvHelper::isDev();
@@ -17,6 +20,14 @@ return [
                 $repository->setFileName($fileName);
             },
         'ZnUser\\Rbac\\Domain\\Interfaces\\Services\\ManagerServiceInterface' => 'ZnUser\\Rbac\\Domain\\Services\\ManagerService',
+
+//        ManagerServiceInterface::class => function(ContainerInterface $container) {
+//            /** @var ManagerService $managerService */
+//            $managerService = $container->make(ManagerService::class);
+//            $managerService->setDefaultRoles([SystemRoleEnum::GUEST]);
+//            return $managerService;
+//        },
+
         'ZnUser\\Rbac\\Domain\\Interfaces\\Services\\InheritanceServiceInterface' => 'ZnUser\\Rbac\\Domain\\Services\\InheritanceService',
         'ZnUser\\Rbac\\Domain\\Interfaces\\Repositories\\InheritanceRepositoryInterface' => $isDbDriver
             ? 'ZnUser\\Rbac\\Domain\\Repositories\\Eloquent\\InheritanceRepository'
@@ -45,6 +56,7 @@ return [
             },
         'ZnUser\\Rbac\\Domain\\Interfaces\\Services\\AssignmentServiceInterface' => 'ZnUser\\Rbac\\Domain\\Services\\AssignmentService',
         'ZnUser\\Rbac\\Domain\\Interfaces\\Repositories\\AssignmentRepositoryInterface' => 'ZnUser\\Rbac\\Domain\\Repositories\\Eloquent\\AssignmentRepository',
+
     ],
     'entities' => [
         'ZnUser\\Rbac\\Domain\\Entities\\RoleEntity' => 'ZnUser\\Rbac\\Domain\\Interfaces\\Repositories\\RoleRepositoryInterface',
