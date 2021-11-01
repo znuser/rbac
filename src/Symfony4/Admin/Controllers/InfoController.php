@@ -12,7 +12,7 @@ use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
 use ZnLib\Web\Symfony4\MicroApp\BaseWebController;
 use ZnLib\Web\Symfony4\MicroApp\Interfaces\ControllerAccessInterface;
 use ZnLib\Web\Symfony4\MicroApp\Libs\FormManager;
-use ZnLib\Web\Symfony4\MicroApp\Libs\layoutManager;
+use ZnLib\Web\Symfony4\MicroApp\Libs\LayoutManager;
 use ZnLib\Web\Widgets\BreadcrumbWidget;
 use ZnSandbox\Sandbox\Bundle\Domain\Interfaces\Services\BundleServiceInterface;
 use ZnSandbox\Sandbox\Generator\Domain\Repositories\Eloquent\SchemaRepository;
@@ -29,7 +29,7 @@ class InfoController extends BaseWebController implements ControllerAccessInterf
 
     public function __construct(
         FormManager $formManager,
-        layoutManager $layoutManager,
+        LayoutManager $layoutManager,
         UrlGeneratorInterface $urlGenerator,
         RoleServiceInterface $roleService,
         ManagerServiceInterface $managerService
