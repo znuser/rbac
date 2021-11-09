@@ -8,7 +8,7 @@ use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
 use ZnCore\Domain\Interfaces\Entity\UniqueInterface;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 
-class RoleEntity implements ValidateEntityByMetadataInterface, UniqueInterface, EntityIdInterface
+class ___RoleEntity implements ValidateEntityByMetadataInterface, UniqueInterface, EntityIdInterface
 {
 
     private $id = null;

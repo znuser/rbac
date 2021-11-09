@@ -56,13 +56,14 @@ return [
             },
         'ZnUser\\Rbac\\Domain\\Interfaces\\Services\\AssignmentServiceInterface' => 'ZnUser\\Rbac\\Domain\\Services\\AssignmentService',
         'ZnUser\\Rbac\\Domain\\Interfaces\\Repositories\\AssignmentRepositoryInterface' => 'ZnUser\\Rbac\\Domain\\Repositories\\Eloquent\\AssignmentRepository',
+        'ZnUser\\Rbac\\Domain\\Interfaces\\Services\\MyAssignmentServiceInterface' => 'ZnUser\\Rbac\\Domain\\Services\\MyAssignmentService',
 
     ],
     'entities' => [
         'ZnUser\\Rbac\\Domain\\Entities\\RoleEntity' => 'ZnUser\\Rbac\\Domain\\Interfaces\\Repositories\\RoleRepositoryInterface',
-        'ZnUser\\Rbac\\Domain\\Entities\\InheritanceEntity' => 'ZnUser\\Rbac\\Domain\\Interfaces\\Repositories\\InheritanceRepositoryInterface',
-        'ZnUser\\Rbac\\Domain\\Entities\\ItemEntity' => 'ZnUser\\Rbac\\Domain\\Interfaces\\Repositories\\ItemRepositoryInterface',
-        'ZnUser\\Rbac\\Domain\\Entities\\PermissionEntity' => 'ZnUser\\Rbac\\Domain\\Interfaces\\Repositories\\PermissionRepositoryInterface',
-        'ZnUser\\Rbac\\Domain\\Entities\\AssignmentEntity' => 'ZnUser\\Rbac\\Domain\\Interfaces\\Repositories\\AssignmentRepositoryInterface',
-    ],
+		'ZnUser\\Rbac\\Domain\\Entities\\InheritanceEntity' => 'ZnUser\\Rbac\\Domain\\Interfaces\\Repositories\\InheritanceRepositoryInterface',
+		'ZnUser\\Rbac\\Domain\\Entities\\ItemEntity' => 'ZnUser\\Rbac\\Domain\\Interfaces\\Repositories\\ItemRepositoryInterface',
+		'ZnUser\\Rbac\\Domain\\Entities\\PermissionEntity' => 'ZnUser\\Rbac\\Domain\\Interfaces\\Repositories\\PermissionRepositoryInterface',
+		'ZnUser\\Rbac\\Domain\\Entities\\AssignmentEntity' => 'ZnUser\\Rbac\\Domain\\Interfaces\\Repositories\\AssignmentRepositoryInterface',
+	],
 ];
