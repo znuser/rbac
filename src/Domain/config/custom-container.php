@@ -6,8 +6,8 @@ use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
 use ZnUser\Rbac\Domain\Interfaces\Services\ManagerServiceInterface;
 use ZnUser\Rbac\Domain\Services\ManagerService;
 
-//$isDbDriver = true;
-$isDbDriver = !EnvHelper::isDev();
+$isDbDriver = true;
+//$isDbDriver = !EnvHelper::isDev();
 
 return [
     'singletons' => [
