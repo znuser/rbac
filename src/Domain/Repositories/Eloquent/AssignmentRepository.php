@@ -39,7 +39,7 @@ class AssignmentRepository extends BaseEloquentCrudRepository implements Assignm
 
     public function allByIdentityId(int $identityId, Query $query = null): Collection
     {
-        $query = Query::forge($query);
+        $query = $this->forgeQuery($query);
         $query->where('identity_id', $identityId);
         return $this->all($query);
     }
