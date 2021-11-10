@@ -6,6 +6,7 @@ use Illuminate\Support\Collection;
 use ZnBundle\User\Domain\Interfaces\Services\AuthServiceInterface;
 use ZnCore\Domain\Base\BaseService;
 use ZnCore\Domain\Interfaces\Libs\EntityManagerInterface;
+use ZnCore\Domain\Libs\Query;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
 use ZnUser\Rbac\Domain\Entities\MyAssignmentEntity;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\MyAssignmentRepositoryInterface;
@@ -40,7 +41,9 @@ class MyAssignmentService extends BaseService implements MyAssignmentServiceInte
     public function all(): Collection
     {
         $identityId = $this->authService->getIdentity()->getId();
-        return $this->assignmentService->allByIdentityId($identityId);
+        $query = new Query();
+        $query->with(['item']);
+        return $this->assignmentService->allByIdentityId($identityId, $query);
     }
 
     public function allNames(): array
