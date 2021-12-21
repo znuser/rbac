@@ -10,6 +10,7 @@ class SystemRoleEnum implements GetLabelsInterface, GetRbacInheritanceInterface
 
     const GUEST = 'rGuest';
     const USER = 'rUser';
+    const DEVELOPER = 'rDeveloper';
     const ADMINISTRATOR = 'rAdministrator';
     const ROOT = 'rRoot';
 
@@ -18,6 +19,7 @@ class SystemRoleEnum implements GetLabelsInterface, GetRbacInheritanceInterface
         return [
             self::GUEST => 'Гость системы',
             self::USER => 'Идентифицированный пользователь',
+            self::DEVELOPER => 'Разработчик',
             self::ADMINISTRATOR => 'Администратор системы',
             self::ROOT => 'Корневой администратор системы',
         ];
@@ -29,10 +31,14 @@ class SystemRoleEnum implements GetLabelsInterface, GetRbacInheritanceInterface
             self::USER => [
                 self::GUEST,
             ],
+            self::DEVELOPER => [
+                self::USER,
+            ],
             self::ADMINISTRATOR => [
                 self::USER,
             ],
             self::ROOT => [
+                self::DEVELOPER,
                 self::ADMINISTRATOR,
             ],
         ];

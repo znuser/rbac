@@ -2,7 +2,10 @@
 
 namespace ZnUser\Rbac\Domain\Enums\Rbac;
 
+use ZnCore\Base\Helpers\DeprecateHelper;
 use ZnCore\Base\Interfaces\GetLabelsInterface;
+
+DeprecateHelper::softThrow();
 
 class ApplicationRoleEnum implements GetLabelsInterface
 {
