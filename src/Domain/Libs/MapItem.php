@@ -72,8 +72,7 @@ class MapItem
     }
 
     protected function assignInheritance(string $enumClassName) {
-        try {
-            ClassHelper::isInstanceOf($enumClassName, GetRbacInheritanceInterface::class, true);
+        if(ClassHelper::instanceOf($enumClassName, GetRbacInheritanceInterface::class, true)) {
             /** @var GetRbacInheritanceInterface $enumClassName */
             $inheritance = $enumClassName::getInheritance();
             foreach ($inheritance as $parentName => $children) {
@@ -81,7 +80,11 @@ class MapItem
                     $this->addChild($parentName, $childName);
                 }
             }
-        } catch (NotInstanceOfException $e) {}
+        }
+        /*try {
+            ClassHelper::checkInstanceOf($enumClassName, GetRbacInheritanceInterface::class, true);
+
+        } catch (NotInstanceOfException $e) {}*/
     }
 
     protected function addChildren(string $parentName, array $childNames)
