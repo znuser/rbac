@@ -15,7 +15,7 @@ use ZnLib\Web\Symfony4\MicroApp\Libs\FormManager;
 use ZnLib\Web\Symfony4\MicroApp\Libs\LayoutManager;
 use ZnLib\Web\Widgets\BreadcrumbWidget;
 use ZnSandbox\Sandbox\Bundle\Domain\Interfaces\Services\BundleServiceInterface;
-use ZnLib\Db\Repositories\Eloquent\SchemaRepository;
+use ZnDatabase\Base\Domain\Repositories\Eloquent\SchemaRepository;
 use ZnUser\Rbac\Domain\Enums\Rbac\ExtraPermissionEnum;
 use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
 use ZnUser\Rbac\Domain\Interfaces\Services\ManagerServiceInterface;
