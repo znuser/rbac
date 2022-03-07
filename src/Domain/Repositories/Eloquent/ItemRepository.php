@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Repositories\Eloquent;
 
-use ZnLib\Db\Base\BaseEloquentCrudRepository;
+use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
 use ZnUser\Rbac\Domain\Entities\ItemEntity;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 
