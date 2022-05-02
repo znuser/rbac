@@ -12,12 +12,12 @@ class InheritanceMap implements InheritanceMapInterface
     private $permissionEnums;
     private $map;
 
-    public function __construct(string $configFile)
+    public function __construct(string $configFile = null)
     {
-        $config = FileHelper::loadData($configFile);
-        $this->roleEnums = $config['roleEnums'];
-        $this->permissionEnums = $config['permissionEnums'];
-        $this->map = $config['inheritance'];
+        if($configFile) {
+            $config = FileHelper::loadData($configFile);
+            $this->setConfig($config);
+        }
     }
 
     public function roleEnums()
@@ -33,5 +33,11 @@ class InheritanceMap implements InheritanceMapInterface
     public function map()
     {
         return $this->map;
+    }
+
+    public function setConfig(array $config) {
+        $this->roleEnums = $config['roleEnums'];
+        $this->permissionEnums = $config['permissionEnums'];
+        $this->map = $config['inheritance'];
     }
 }

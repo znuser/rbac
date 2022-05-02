@@ -9,9 +9,14 @@ use ZnUser\Rbac\Domain\Libs\MapItem;
 class FixtureGeneratorFacade
 {
 
-    public static function generateInheritanceCollection(string $configFile): array
+    public static function generateInheritanceCollection(string $configFile = null): array
     {
         $inheritanceMap = new InheritanceMap($configFile);
+        if($configFile == null) {
+            $config = \ZnUser\Rbac\Domain\Helpers\RbacConfigHelper::getAll();
+            $inheritanceMap->setConfig($config);
+        }
+
         $mapItem = new MapItem($inheritanceMap);
         $result = $mapItem->run();
         $collection = [];
@@ -21,9 +26,14 @@ class FixtureGeneratorFacade
         return $collection;
     }
 
-    public static function generateItemCollection(string $configFile): array
+    public static function generateItemCollection(string $configFile = null): array
     {
         $inheritanceMap = new InheritanceMap($configFile);
+        if($configFile == null) {
+            $config = \ZnUser\Rbac\Domain\Helpers\RbacConfigHelper::getAll();
+            $inheritanceMap->setConfig($config);
+        }
+
         $mapItem = new MapItem($inheritanceMap);
         $result = $mapItem->run();
         $collection = [];
