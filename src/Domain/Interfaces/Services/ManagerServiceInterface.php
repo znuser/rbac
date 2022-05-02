@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Interfaces\Services;
 
-use ZnCore\Base\Exceptions\ForbiddenException;
+use ZnCore\Contract\User\Exceptions\ForbiddenException;
 
 interface ManagerServiceInterface
 {

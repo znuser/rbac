@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 use ZnCore\Base\Exceptions\NotInstanceOfException;
 use ZnCore\Base\Helpers\ClassHelper;
 use ZnCore\Base\Helpers\EnumHelper;
-use ZnCore\Base\Interfaces\GetLabelsInterface;
+use ZnCore\Contract\Enum\Interfaces\GetLabelsInterface;
 use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
 use ZnUser\Rbac\Domain\Entities\InheritanceEntity;
 use ZnUser\Rbac\Domain\Entities\ItemEntity;

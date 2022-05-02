@@ -4,9 +4,9 @@ namespace ZnUser\Rbac\Domain\Services;
 
 use App\Organization\Domain\Enums\Rbac\OrganizationOrganizationPermissionEnum;
 use Casbin\ManagementEnforcer;
-use ZnBundle\User\Domain\Exceptions\UnauthorizedException;
+use ZnCore\Contract\User\Exceptions\UnauthorizedException;
 use ZnBundle\User\Domain\Interfaces\Services\AuthServiceInterface;
-use ZnCore\Base\Exceptions\ForbiddenException;
+use ZnCore\Contract\User\Exceptions\ForbiddenException;
 use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\ManagerRepositoryInterface;
 use ZnUser\Rbac\Domain\Interfaces\Services\AssignmentServiceInterface;

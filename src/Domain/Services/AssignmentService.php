@@ -3,7 +3,7 @@
 namespace ZnUser\Rbac\Domain\Services;
 
 use Illuminate\Support\Collection;
-use ZnBundle\User\Domain\Interfaces\Entities\IdentityEntityInterface;
+use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
 use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Base\Exceptions\AlreadyExistsException;
 use ZnCore\Base\Exceptions\NotFoundException;
