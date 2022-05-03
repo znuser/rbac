@@ -2,20 +2,16 @@
 
 namespace ZnUser\Rbac\Domain\Enums\Rbac;
 
-use ZnCore\Base\Helpers\DeprecateHelper;
 use ZnCore\Contract\Enum\Interfaces\GetLabelsInterface;
+use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
+use ZnCore\Contract\Rbac\Traits\CrudRbacInheritanceTrait;
 
-DeprecateHelper::softThrow();
-
-/**
- * Class RbacItemPermissionEnum
- * @package ZnUser\Rbac\Domain\Enums\Rbac
- * @deprecated
- * @see RbacItemEnum
- */
-class RbacItemPermissionEnum implements GetLabelsInterface
+class RbacItemPermissionEnum implements GetLabelsInterface, GetRbacInheritanceInterface
 {
 
+    use CrudRbacInheritanceTrait;
+
+    const CRUD = 'oRbacItemCrud';
     const ALL = 'oRbacItemAll';
     const ONE = 'oRbacItemOne';
     const CREATE = 'oRbacItemCreate';
@@ -26,11 +22,12 @@ class RbacItemPermissionEnum implements GetLabelsInterface
     public static function getLabels()
     {
         return [
-            self::ALL => 'RBAC item. Просмотр списка',
-            self::ONE => 'RBAC item. Просмотр записи',
-            self::CREATE => 'RBAC item. Создание',
-            self::UPDATE => 'RBAC item. Редактирование',
-            self::DELETE => 'RBAC item. Удаление',
+            self::CRUD => 'RBAC роли и полномочия. Полный доступ',
+            self::ALL => 'RBAC роли и полномочия. Просмотр списка',
+            self::ONE => 'RBAC роли и полномочия. Просмотр записи',
+            self::CREATE => 'RBAC роли и полномочия. Создание',
+            self::UPDATE => 'RBAC роли и полномочия. Редактирование',
+            self::DELETE => 'RBAC роли и полномочия. Удаление',
 //            self::RESTORE => 'RBAC item. Восстановление',
         ];
     }

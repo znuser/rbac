@@ -1,6 +1,6 @@
 <?php
 
-use ZnUser\Rbac\Domain\Enums\Rbac\RbacItemEnum;
+use ZnUser\Rbac\Domain\Enums\Rbac\RbacItemPermissionEnum;
 use ZnUser\Rbac\Rpc\Controllers\RoleController;
 
 return [
@@ -9,7 +9,7 @@ return [
         'version' => '1',
         'is_verify_eds' => false,
         'is_verify_auth' => true,
-        'permission_name' => RbacItemEnum::ALL,
+        'permission_name' => RbacItemPermissionEnum::ALL,
         'handler_class' => RoleController::class,
         'handler_method' => 'all',
         'status_id' => 100,
