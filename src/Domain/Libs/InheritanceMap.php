@@ -3,6 +3,7 @@
 namespace ZnUser\Rbac\Domain\Libs;
 
 use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
+use ZnCore\Base\Libs\Store\Helpers\StoreHelper;
 use ZnUser\Rbac\Domain\Interfaces\InheritanceMapInterface;
 
 class InheritanceMap implements InheritanceMapInterface
@@ -15,7 +16,7 @@ class InheritanceMap implements InheritanceMapInterface
     public function __construct(string $configFile = null)
     {
         if($configFile) {
-            $config = FileHelper::loadData($configFile);
+            $config = StoreHelper::load($configFile);
             $this->setConfig($config);
         }
     }
