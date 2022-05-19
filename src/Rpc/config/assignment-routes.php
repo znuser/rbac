@@ -13,6 +13,8 @@ return [
         'handler_class' => AssignmentController::class,
         'handler_method' => 'attach',
         'status_id' => 100,
+        'title' => null,
+        'description' => null,
     ],
     [
         'method_name' => 'rbacAssignment.detach',
@@ -23,6 +25,8 @@ return [
         'handler_class' => AssignmentController::class,
         'handler_method' => 'detach',
         'status_id' => 100,
+        'title' => null,
+        'description' => null,
     ],
     [
         'method_name' => 'rbacAssignment.allRoles',
@@ -33,5 +37,7 @@ return [
         'handler_class' => AssignmentController::class,
         'handler_method' => 'allRoles',
         'status_id' => 100,
+        'title' => null,
+        'description' => null,
     ],
 ];

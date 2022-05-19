@@ -10,5 +10,7 @@ return [
         'handler_class' => \ZnUser\Rbac\Rpc\Controllers\MyAssignmentController::class,
         'handler_method' => 'allRoles',
         'status_id' => 100,
+        'title' => null,
+        'description' => null,
     ],
 ];
