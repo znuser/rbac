@@ -22,13 +22,13 @@ class RbacItemPermissionEnum implements GetLabelsInterface, GetRbacInheritanceIn
     public static function getLabels()
     {
         return [
-            self::CRUD => 'RBAC роли и полномочия. Полный доступ',
-            self::ALL => 'RBAC роли и полномочия. Просмотр списка',
-            self::ONE => 'RBAC роли и полномочия. Просмотр записи',
-            self::CREATE => 'RBAC роли и полномочия. Создание',
-            self::UPDATE => 'RBAC роли и полномочия. Редактирование',
-            self::DELETE => 'RBAC роли и полномочия. Удаление',
-//            self::RESTORE => 'RBAC item. Восстановление',
+            self::CRUD => 'RBAC. Роли и полномочия. Полный доступ',
+            self::ALL => 'RBAC. Роли и полномочия. Просмотр списка',
+            self::ONE => 'RBAC. Роли и полномочия. Просмотр записи',
+            self::CREATE => 'RBAC. Роли и полномочия. Создание',
+            self::UPDATE => 'RBAC. Роли и полномочия. Редактирование',
+            self::DELETE => 'RBAC. Роли и полномочия. Удаление',
+//            self::RESTORE => 'RBAC. item. Восстановление',
         ];
     }
 }
