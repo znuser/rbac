@@ -13,7 +13,7 @@ return [
         'handler_class' => RoleController::class,
         'handler_method' => 'all',
         'status_id' => 100,
-        'title' => null,
+        'title' => 'RBAC. Роли. Просмотр списка',
         'description' => null,
     ],
     [
@@ -25,7 +25,7 @@ return [
         'handler_class' => RoleController::class,
         'handler_method' => 'oneById',
         'status_id' => 100,
-        'title' => null,
+        'title' => 'RBAC. Роли. Просмотр записи',
         'description' => null,
     ],
     [
@@ -37,7 +37,7 @@ return [
         'handler_class' => RoleController::class,
         'handler_method' => 'add',
         'status_id' => 100,
-        'title' => null,
+        'title' => 'RBAC. Роли. Создание',
         'description' => null,
     ],
     [
@@ -49,7 +49,7 @@ return [
         'handler_class' => RoleController::class,
         'handler_method' => 'update',
         'status_id' => 100,
-        'title' => null,
+        'title' => 'RBAC. Роли. Редактирование',
         'description' => null,
     ],
     [
@@ -61,7 +61,7 @@ return [
         'handler_class' => RoleController::class,
         'handler_method' => 'delete',
         'status_id' => 100,
-        'title' => null,
+        'title' => 'RBAC. Роли. Удаление',
         'description' => null,
     ],
 ];

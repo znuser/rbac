@@ -1,6 +1,7 @@
 <?php
 
 use ZnUser\Rbac\Rpc\Controllers\PermissionController;
+use ZnUser\Rbac\Domain\Enums\Rbac\RbacItemPermissionEnum;
 
 return [
     [
@@ -8,11 +9,11 @@ return [
         'version' => '1',
         'is_verify_eds' => false,
         'is_verify_auth' => true,
-        'permission_name' => 'oRbacItemAll',
+        'permission_name' => RbacItemPermissionEnum::ALL,
         'handler_class' => PermissionController::class,
         'handler_method' => 'all',
         'status_id' => 100,
-        'title' => null,
+        'title' => 'RBAC. Полномочия. Просмотр списка',
         'description' => null,
     ],
     [
@@ -20,11 +21,11 @@ return [
         'version' => '1',
         'is_verify_eds' => false,
         'is_verify_auth' => true,
-        'permission_name' => 'oRbacItemOne',
+        'permission_name' => RbacItemPermissionEnum::ONE,
         'handler_class' => PermissionController::class,
         'handler_method' => 'oneById',
         'status_id' => 100,
-        'title' => null,
+        'title' => 'RBAC. Полномочия. Просмотр записи',
         'description' => null,
     ],
     [
@@ -32,11 +33,11 @@ return [
         'version' => '1',
         'is_verify_eds' => false,
         'is_verify_auth' => true,
-        'permission_name' => 'oRbacItemCreate',
+        'permission_name' => RbacItemPermissionEnum::CREATE,
         'handler_class' => PermissionController::class,
         'handler_method' => 'add',
         'status_id' => 100,
-        'title' => null,
+        'title' => 'RBAC. Полномочия. Создание',
         'description' => null,
     ],
     [
@@ -44,11 +45,11 @@ return [
         'version' => '1',
         'is_verify_eds' => false,
         'is_verify_auth' => true,
-        'permission_name' => 'oRbacItemUpdate',
+        'permission_name' => RbacItemPermissionEnum::UPDATE,
         'handler_class' => PermissionController::class,
         'handler_method' => 'update',
         'status_id' => 100,
-        'title' => null,
+        'title' => 'RBAC. Полномочия. Редактирование',
         'description' => null,
     ],
     [
@@ -56,11 +57,11 @@ return [
         'version' => '1',
         'is_verify_eds' => false,
         'is_verify_auth' => true,
-        'permission_name' => 'oRbacItemDelete',
+        'permission_name' => RbacItemPermissionEnum::DELETE,
         'handler_class' => PermissionController::class,
         'handler_method' => 'delete',
         'status_id' => 100,
-        'title' => null,
+        'title' => 'RBAC. Полномочия. Удаление',
         'description' => null,
     ],
 ];
