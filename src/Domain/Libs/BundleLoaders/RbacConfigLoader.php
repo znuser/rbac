@@ -3,7 +3,7 @@
 namespace ZnUser\Rbac\Domain\Libs\BundleLoaders;
 
 use ZnCore\Base\Legacy\Yii\Helpers\ArrayHelper;
-use ZnCore\Base\Libs\App\Interfaces\ConfigManagerInterface;
+use ZnCore\Base\Libs\ConfigManager\Interfaces\ConfigManagerInterface;
 use ZnCore\Base\Libs\App\Loaders\BundleLoaders\BaseLoader;
 
 class RbacConfigLoader extends BaseLoader
