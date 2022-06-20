@@ -4,7 +4,7 @@ namespace ZnUser\Rbac\Domain\Repositories\Eloquent;
 
 use Illuminate\Support\Collection;
 use ZnBundle\Person\Domain\Interfaces\Repositories\ContactTypeRepositoryInterface;
-use ZnCore\Domain\Libs\Query;
+use ZnCore\Base\Libs\Query\Entities\Query;
 use ZnCore\Domain\Relations\relations\OneToOneRelation;
 use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;

@@ -11,7 +11,7 @@ use ZnCore\Domain\Base\BaseCrudService;
 use ZnCore\Base\Libs\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Base\Libs\Entity\Helpers\EntityHelper;
 use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Domain\Libs\Query;
+use ZnCore\Base\Libs\Query\Entities\Query;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
 use ZnUser\Rbac\Domain\Entities\ItemEntity;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\AssignmentRepositoryInterface;

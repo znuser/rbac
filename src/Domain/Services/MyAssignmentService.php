@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 use ZnBundle\User\Domain\Interfaces\Services\AuthServiceInterface;
 use ZnCore\Domain\Base\BaseService;
 use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Domain\Libs\Query;
+use ZnCore\Base\Libs\Query\Entities\Query;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
 use ZnUser\Rbac\Domain\Entities\MyAssignmentEntity;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\MyAssignmentRepositoryInterface;
