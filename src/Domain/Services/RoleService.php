@@ -4,7 +4,7 @@ namespace ZnUser\Rbac\Domain\Services;
 
 use ZnUser\Rbac\Domain\Interfaces\Services\RoleServiceInterface;
 use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Domain\Base\BaseCrudService;
+use ZnCore\Base\Libs\Service\Base\BaseCrudService;
 use ZnUser\Rbac\Domain\Entities\RoleEntity;
 
 class RoleService extends BaseCrudService implements RoleServiceInterface

@@ -7,7 +7,7 @@ use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
 use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Base\Exceptions\AlreadyExistsException;
 use ZnCore\Base\Exceptions\NotFoundException;
-use ZnCore\Domain\Base\BaseCrudService;
+use ZnCore\Base\Libs\Service\Base\BaseCrudService;
 use ZnCore\Base\Libs\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Base\Libs\Entity\Helpers\EntityHelper;
 use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;

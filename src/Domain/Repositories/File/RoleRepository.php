@@ -6,7 +6,7 @@ use ZnCore\Base\Libs\Query\Entities\Query;
 use ZnUser\Rbac\Domain\Entities\RoleEntity;
 use ZnUser\Rbac\Domain\Enums\ItemTypeEnum;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\RoleRepositoryInterface;
-use ZnCore\Domain\Base\Repositories\BaseFileCrudRepository;
+use ZnCore\Base\Libs\FileSystem\Base\BaseFileCrudRepository;
 
 class RoleRepository extends ItemRepository implements RoleRepositoryInterface
 {

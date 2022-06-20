@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Enums\Rbac;
 
-use ZnCore\Contract\Enum\Interfaces\GetLabelsInterface;
+use ZnCore\Base\Libs\Enum\Interfaces\GetLabelsInterface;
 use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
 
 class RbacMyAssignmentPermissionEnum implements GetLabelsInterface, GetRbacInheritanceInterface

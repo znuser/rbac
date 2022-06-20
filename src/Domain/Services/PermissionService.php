@@ -5,7 +5,7 @@ namespace ZnUser\Rbac\Domain\Services;
 use ZnUser\Rbac\Domain\Interfaces\Services\PermissionServiceInterface;
 use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\PermissionRepositoryInterface;
-use ZnCore\Domain\Base\BaseCrudService;
+use ZnCore\Base\Libs\Service\Base\BaseCrudService;
 use ZnUser\Rbac\Domain\Entities\PermissionEntity;
 
 /**
