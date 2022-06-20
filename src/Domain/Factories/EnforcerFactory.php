@@ -9,7 +9,7 @@ use Casbin\Persist\Adapters\FileAdapter;
 use Casbin\Rbac\DefaultRoleManager\RoleManager;
 use Casbin\Rbac\RoleManager as RoleManagerContract;
 use Illuminate\Support\Collection;
-use ZnCore\Domain\Helpers\EntityHelper;
+use ZnCore\Base\Libs\Entity\Helpers\EntityHelper;
 
 class EnforcerFactory
 {

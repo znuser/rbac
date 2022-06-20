@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Rpc\Controllers;
 
-use ZnCore\Domain\Helpers\EntityHelper;
+use ZnCore\Base\Libs\Entity\Helpers\EntityHelper;
 use ZnLib\Rpc\Domain\Entities\RpcRequestEntity;
 use ZnLib\Rpc\Domain\Entities\RpcResponseEntity;
 use ZnUser\Rbac\Domain\Interfaces\Services\MyAssignmentServiceInterface;

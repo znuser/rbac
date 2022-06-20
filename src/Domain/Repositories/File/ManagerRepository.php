@@ -5,8 +5,8 @@ namespace ZnUser\Rbac\Domain\Repositories\File;
 use Casbin\ManagementEnforcer;
 use Symfony\Component\Cache\Adapter\AdapterInterface;
 use Symfony\Contracts\Cache\ItemInterface;
-use ZnCore\Domain\Interfaces\Libs\EntityManagerInterface;
-use ZnCore\Domain\Traits\EntityManagerTrait;
+use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
+use ZnCore\Base\Libs\EntityManager\Traits\EntityManagerAwareTrait;
 use ZnUser\Rbac\Domain\Entities\InheritanceEntity;
 use ZnUser\Rbac\Domain\Enums\RbacCacheEnum;
 use ZnUser\Rbac\Domain\Factories\EnforcerFactory;
@@ -15,7 +15,7 @@ use ZnUser\Rbac\Domain\Interfaces\Repositories\ManagerRepositoryInterface;
 class ManagerRepository implements ManagerRepositoryInterface
 {
 
-    use EntityManagerTrait;
+    use EntityManagerAwareTrait;
 
     private $cache;
 

@@ -5,7 +5,7 @@ namespace ZnUser\Rbac\Domain\Services;
 use Illuminate\Support\Collection;
 use ZnBundle\User\Domain\Interfaces\Services\AuthServiceInterface;
 use ZnCore\Domain\Base\BaseService;
-use ZnCore\Domain\Interfaces\Libs\EntityManagerInterface;
+use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\Domain\Libs\Query;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
 use ZnUser\Rbac\Domain\Entities\MyAssignmentEntity;

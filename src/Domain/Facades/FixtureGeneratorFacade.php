@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Facades;
 
-use ZnCore\Domain\Helpers\EntityHelper;
+use ZnCore\Base\Libs\Entity\Helpers\EntityHelper;
 use ZnUser\Rbac\Domain\Libs\InheritanceMap;
 use ZnUser\Rbac\Domain\Libs\MapItem;
 
