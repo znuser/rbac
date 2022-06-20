@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Repositories\File;
 
-use ZnCore\Base\Libs\FileSystem\Base\BaseFileCrudRepository;
+use ZnCore\Base\Libs\Store\Base\BaseFileCrudRepository;
 use ZnUser\Rbac\Domain\Entities\InheritanceEntity;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\InheritanceRepositoryInterface;
 

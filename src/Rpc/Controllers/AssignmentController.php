@@ -2,6 +2,7 @@
 
 namespace ZnUser\Rbac\Rpc\Controllers;
 
+use ZnCore\Base\Libs\Entity\Helpers\CollectionHelper;
 use ZnCore\Base\Libs\Entity\Helpers\EntityHelper;
 use ZnLib\Rpc\Domain\Entities\RpcRequestEntity;
 use ZnLib\Rpc\Domain\Entities\RpcResponseEntity;
@@ -39,7 +40,7 @@ class AssignmentController
     public function allRoles(RpcRequestEntity $requestEntity): RpcResponseEntity
     {
         $collection = $this->service->allByIdentityId($requestEntity->getParamItem('identityId'));
-        $resultArray = EntityHelper::collectionToArray($collection);
+        $resultArray = CollectionHelper::toArray($collection);
         $response = new RpcResponseEntity();
         $response->setResult($resultArray);
         return $response;

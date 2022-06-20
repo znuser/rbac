@@ -3,6 +3,7 @@
 namespace ZnUser\Rbac\Domain\Services;
 
 use Illuminate\Support\Collection;
+use ZnCore\Base\Libs\Entity\Helpers\CollectionHelper;
 use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
 use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Base\Exceptions\AlreadyExistsException;
@@ -36,7 +37,7 @@ class AssignmentService extends BaseCrudService implements AssignmentServiceInte
     public function getRolesByIdentityId(int $identityId): array
     {
         $collection = $this->getRepository()->allByIdentityId($identityId);
-        return EntityHelper::getColumn($collection, 'item_name');
+        return CollectionHelper::getColumn($collection, 'item_name');
     }
 
     public function allByIdentityId(int $identityId, Query $query = null): Collection

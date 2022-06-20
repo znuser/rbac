@@ -9,6 +9,7 @@ use Casbin\Persist\Adapters\FileAdapter;
 use Casbin\Rbac\DefaultRoleManager\RoleManager;
 use Casbin\Rbac\RoleManager as RoleManagerContract;
 use Illuminate\Support\Collection;
+use ZnCore\Base\Libs\Entity\Helpers\CollectionHelper;
 use ZnCore\Base\Libs\Entity\Helpers\EntityHelper;
 
 class EnforcerFactory
@@ -17,7 +18,7 @@ class EnforcerFactory
     public function createEnforcerByInheritanceCollection(Collection $collection): ManagementEnforcer
     {
         $enforcer = $this->createEnforcer();
-        $map = EntityHelper::collectionToArray($collection);
+        $map = CollectionHelper::toArray($collection);
         $roleManager = $this->createRoleManager($map);
         $enforcer->setRoleManager($roleManager);
         //$enforcer->savePolicy();
