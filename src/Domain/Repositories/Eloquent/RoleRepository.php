@@ -15,7 +15,7 @@ class RoleRepository extends ItemRepository
         return RoleEntity::class;
     }
 
-    protected function forgeQuery(Query $query = null)
+    protected function forgeQuery(Query $query = null): Query
     {
         $query = parent::forgeQuery($query);
         $query->where('type', ItemTypeEnum::ROLE);

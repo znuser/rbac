@@ -15,7 +15,7 @@ class PermissionRepository extends ItemRepository
         return PermissionEntity::class;
     }
 
-    protected function forgeQuery(Query $query = null)
+    protected function forgeQuery(Query $query = null): Query
     {
         $query = parent::forgeQuery($query);
         $query->where('type', ItemTypeEnum::PERMISSION);
