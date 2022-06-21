@@ -51,7 +51,7 @@ class ManagerRepository implements ManagerRepositoryInterface
     private function forgeRoleManager(): ManagementEnforcer
     {
         $enforcerFactory = new EnforcerFactory;
-        $inheritanceCollection = $this->getEntityManager()->all(InheritanceEntity::class);
+        $inheritanceCollection = $this->getEntityManager()->getRepository(InheritanceEntity::class)->all();
         return $enforcerFactory->createEnforcerByInheritanceCollection($inheritanceCollection);
     }
 }

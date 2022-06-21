@@ -62,7 +62,7 @@ class AssignmentService extends BaseCrudService implements AssignmentServiceInte
         $assignmentQuery->where('item_name', $assignmentEntity->getItemName());
         $assignmentQuery->where('identity_id', $assignmentEntity->getIdentityId());
         try {
-            $assignmentEntity = $this->getEntityManager()->one(AssignmentEntity::class, $assignmentQuery);
+            $assignmentEntity = $this->getEntityManager()->getRepository(AssignmentEntity::class)->one($assignmentQuery);
             throw new AlreadyExistsException('Assignment already exists');
         } catch (NotFoundException $e) {}
     }
@@ -71,7 +71,7 @@ class AssignmentService extends BaseCrudService implements AssignmentServiceInte
         $unprocessibleEntityException = new UnprocessibleEntityException();
 
         try {
-            $identityEntity = $this->getEntityManager()->oneById(IdentityEntityInterface::class, $assignmentEntity->getIdentityId());
+            $identityEntity = $this->getEntityManager()->getRepository(IdentityEntityInterface::class)->oneById($assignmentEntity->getIdentityId());
         } catch (NotFoundException $e) {
             $unprocessibleEntityException->add('identityId', 'User not found');
         }
@@ -79,7 +79,7 @@ class AssignmentService extends BaseCrudService implements AssignmentServiceInte
         $itemQuery = new Query();
         $itemQuery->where('name', $assignmentEntity->getItemName());
         try {
-            $itemEntity = $this->getEntityManager()->one(ItemEntity::class, $itemQuery);
+            $itemEntity = $this->getEntityManager()->getRepository(ItemEntity::class)->one($itemQuery);
         } catch (NotFoundException $e) {
             $unprocessibleEntityException->add('itemName', 'Item not found');
         }
