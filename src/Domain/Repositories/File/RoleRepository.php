@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Repositories\File;
 
-use ZnCore\Base\Libs\Query\Entities\Query;
+use ZnCore\Domain\Query\Entities\Query;
 use ZnUser\Rbac\Domain\Entities\RoleEntity;
 use ZnUser\Rbac\Domain\Enums\ItemTypeEnum;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\RoleRepositoryInterface;

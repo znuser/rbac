@@ -3,8 +3,8 @@
 namespace ZnUser\Rbac\Domain\Services;
 
 use ZnUser\Rbac\Domain\Interfaces\Services\InheritanceServiceInterface;
-use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Base\Libs\Service\Base\BaseCrudService;
+use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
+use ZnCore\Domain\Service\Base\BaseCrudService;
 use ZnUser\Rbac\Domain\Entities\InheritanceEntity;
 
 class InheritanceService extends BaseCrudService implements InheritanceServiceInterface
