@@ -1,6 +1,6 @@
 <?php
 
-use ZnCore\Base\Libs\App\Helpers\EnvHelper;
+use ZnCore\Base\App\Helpers\EnvHelper;
 use Psr\Container\ContainerInterface;
 use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
 use ZnUser\Rbac\Domain\Interfaces\Services\ManagerServiceInterface;

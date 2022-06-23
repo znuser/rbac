@@ -3,10 +3,10 @@
 namespace ZnUser\Rbac\Domain\Libs;
 
 use Illuminate\Support\Collection;
-use ZnCore\Base\Libs\Instance\Exceptions\NotInstanceOfException;
-use ZnCore\Base\Libs\Instance\Helpers\ClassHelper;
-use ZnCore\Base\Libs\Enum\Helpers\EnumHelper;
-use ZnCore\Base\Libs\Enum\Interfaces\GetLabelsInterface;
+use ZnCore\Base\Instance\Exceptions\NotInstanceOfException;
+use ZnCore\Base\Instance\Helpers\ClassHelper;
+use ZnCore\Base\Enum\Helpers\EnumHelper;
+use ZnCore\Base\Enum\Interfaces\GetLabelsInterface;
 use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
 use ZnUser\Rbac\Domain\Entities\InheritanceEntity;
 use ZnUser\Rbac\Domain\Entities\ItemEntity;
