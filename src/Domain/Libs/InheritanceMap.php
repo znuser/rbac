@@ -2,7 +2,6 @@
 
 namespace ZnUser\Rbac\Domain\Libs;
 
-use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
 use ZnCore\Base\Libs\Store\Helpers\StoreHelper;
 use ZnUser\Rbac\Domain\Interfaces\InheritanceMapInterface;
 
@@ -15,7 +14,7 @@ class InheritanceMap implements InheritanceMapInterface
 
     public function __construct(string $configFile = null)
     {
-        if($configFile) {
+        if ($configFile) {
             $config = StoreHelper::load($configFile);
             $this->setConfig($config);
         }
@@ -36,7 +35,8 @@ class InheritanceMap implements InheritanceMapInterface
         return $this->map;
     }
 
-    public function setConfig(array $config) {
+    public function setConfig(array $config)
+    {
         $this->roleEnums = $config['roleEnums'];
         $this->permissionEnums = $config['permissionEnums'];
         $this->map = $config['inheritance'];
