@@ -9,11 +9,6 @@ use ZnCore\Base\App\Loaders\BundleLoaders\BaseLoader;
 class RbacConfigLoader extends BaseLoader
 {
 
-//    public function __construct(ConfigManagerInterface $configManager)
-//    {
-//        $this->setConfigManager($configManager);
-//    }
-
     public function loadAll(array $bundles): array
     {
         $config = [];
