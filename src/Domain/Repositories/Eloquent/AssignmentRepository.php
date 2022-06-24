@@ -24,7 +24,7 @@ class AssignmentRepository extends BaseEloquentCrudRepository implements Assignm
         return AssignmentEntity::class;
     }
 
-    public function relations2()
+    public function relations()
     {
         return [
             [
