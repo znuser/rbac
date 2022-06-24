@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Libs\BundleLoaders;
 
-use ZnCore\Base\App\Loaders\BundleLoaders\BaseLoader;
+use ZnCore\Base\Bundle\Base\BaseLoader;
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
 
 class RbacConfigLoader extends BaseLoader
