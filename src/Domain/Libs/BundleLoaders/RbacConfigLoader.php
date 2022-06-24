@@ -2,14 +2,13 @@
 
 namespace ZnUser\Rbac\Domain\Libs\BundleLoaders;
 
-use ZnCore\Base\Arr\Helpers\ArrayHelper;
-use ZnCore\Base\ConfigManager\Interfaces\ConfigManagerInterface;
 use ZnCore\Base\App\Loaders\BundleLoaders\BaseLoader;
+use ZnCore\Base\Arr\Helpers\ArrayHelper;
 
 class RbacConfigLoader extends BaseLoader
 {
 
-    public function loadAll(array $bundles): array
+    public function loadAll(array $bundles): void
     {
         $config = [];
         foreach ($bundles as $bundle) {
@@ -17,6 +16,5 @@ class RbacConfigLoader extends BaseLoader
             $config = ArrayHelper::merge($config, $loadedConfig);
         }
         $this->getConfigManager()->set('rbacConfig', $config);
-        return [];
     }
 }
