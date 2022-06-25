@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Libs;
 
-use ZnCore\Base\Store\Helpers\StoreHelper;
+use ZnLib\Components\Store\Helpers\StoreHelper;
 use ZnUser\Rbac\Domain\Interfaces\InheritanceMapInterface;
 
 class InheritanceMap implements InheritanceMapInterface
