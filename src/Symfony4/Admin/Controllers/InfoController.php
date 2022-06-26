@@ -13,7 +13,7 @@ use ZnLib\Web\Components\Controller\BaseWebController;
 use ZnLib\Web\Components\Controller\Interfaces\ControllerAccessInterface;
 use ZnLib\Web\Components\Form\Libs\FormManager;
 use ZnLib\Web\Components\Layout\Libs\LayoutManager;
-use ZnLib\Web\Components\Widget\Widgets\BreadcrumbWidget;
+use ZnLib\Web\Components\TwBootstrap\Widgets\Breadcrumb\BreadcrumbWidget;
 use ZnSandbox\Sandbox\Bundle\Domain\Interfaces\Services\BundleServiceInterface;
 use ZnDatabase\Base\Domain\Repositories\Eloquent\SchemaRepository;
 use ZnUser\Rbac\Domain\Enums\Rbac\ExtraPermissionEnum;
