@@ -11,7 +11,7 @@ use ZnBundle\Dashboard\Domain\Enums\Rbac\DashboardPermissionEnum;
 use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
 use ZnLib\Web\Symfony4\MicroApp\BaseWebController;
 use ZnLib\Web\Symfony4\MicroApp\Interfaces\ControllerAccessInterface;
-use ZnLib\Web\Symfony4\MicroApp\Libs\FormManager;
+use ZnLib\Web\Components\Form\Libs\FormManager;
 use ZnLib\Web\Symfony4\MicroApp\Libs\LayoutManager;
 use ZnLib\Web\Widgets\BreadcrumbWidget;
 use ZnSandbox\Sandbox\Bundle\Domain\Interfaces\Services\BundleServiceInterface;
