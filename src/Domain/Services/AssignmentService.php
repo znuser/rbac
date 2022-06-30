@@ -71,7 +71,7 @@ class AssignmentService extends BaseCrudService implements AssignmentServiceInte
         $unprocessibleEntityException = new UnprocessibleEntityException();
 
         try {
-            $identityEntity = $this->getEntityManager()->getRepository(IdentityEntityInterface::class)->oneById($assignmentEntity->getIdentityId());
+            $identityEntity = $this->getEntityManager()->getRepository(IdentityEntityInterface::class)->findOneById($assignmentEntity->getIdentityId());
         } catch (NotFoundException $e) {
             $unprocessibleEntityException->add('identityId', 'User not found');
         }

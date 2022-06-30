@@ -38,7 +38,7 @@ class MyAssignmentService extends BaseService implements MyAssignmentServiceInte
         return AssignmentEntity::class;
     }
 
-    public function all(): Collection
+    public function findAll(): Collection
     {
         $identityId = $this->authService->getIdentity()->getId();
         $query = new Query();
