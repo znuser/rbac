@@ -41,6 +41,6 @@ class AssignmentRepository extends BaseEloquentCrudRepository implements Assignm
     {
         $query = $this->forgeQuery($query);
         $query->where('identity_id', $identityId);
-        return $this->all($query);
+        return $this->findAll($query);
     }
 }
