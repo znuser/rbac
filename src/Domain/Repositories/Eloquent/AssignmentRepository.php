@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Repositories\Eloquent;
 
-use Illuminate\Support\Collection;
+use ZnCore\Domain\Collection\Libs\Collection;
 use ZnBundle\Person\Domain\Interfaces\Repositories\ContactTypeRepositoryInterface;
 use ZnCore\Domain\Query\Entities\Query;
 use ZnCore\Domain\Relation\Libs\Types\OneToOneRelation;

@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Interfaces\Services;
 
-use Illuminate\Support\Collection;
+use ZnCore\Domain\Collection\Libs\Collection;
 
 interface MyAssignmentServiceInterface
 {

@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Interfaces\Services;
 
-use Illuminate\Support\Collection;
+use ZnCore\Domain\Collection\Libs\Collection;
 use ZnCore\Domain\Service\Interfaces\CrudServiceInterface;
 use ZnCore\Domain\Query\Entities\Query;
 

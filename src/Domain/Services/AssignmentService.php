@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Services;
 
-use Illuminate\Support\Collection;
+use ZnCore\Domain\Collection\Libs\Collection;
 use ZnCore\Domain\Entity\Helpers\CollectionHelper;
 use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
 use ZnLib\Components\Status\Enums\StatusEnum;

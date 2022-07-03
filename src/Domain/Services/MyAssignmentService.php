@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Services;
 
-use Illuminate\Support\Collection;
+use ZnCore\Domain\Collection\Libs\Collection;
 use ZnUser\Authentication\Domain\Interfaces\Services\AuthServiceInterface;
 use ZnCore\Domain\Service\Base\BaseService;
 use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;

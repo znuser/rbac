@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Libs;
 
-use Illuminate\Support\Collection;
+use ZnCore\Domain\Collection\Libs\Collection;
 use ZnCore\Base\Instance\Exceptions\NotInstanceOfException;
 use ZnCore\Base\Instance\Helpers\ClassHelper;
 use ZnCore\Base\Enum\Helpers\EnumHelper;
