@@ -2,6 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Services;
 
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 use ZnCore\Domain\Collection\Libs\Collection;
 use ZnUser\Authentication\Domain\Interfaces\Services\AuthServiceInterface;
 use ZnCore\Domain\Service\Base\BaseService;
@@ -38,7 +39,7 @@ class MyAssignmentService extends BaseService implements MyAssignmentServiceInte
         return AssignmentEntity::class;
     }
 
-    public function findAll(): Collection
+    public function findAll(): Enumerable
     {
         $identityId = $this->authService->getIdentity()->getId();
         $query = new Query();

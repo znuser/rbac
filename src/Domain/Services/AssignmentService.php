@@ -2,6 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Services;
 
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 use ZnCore\Domain\Collection\Libs\Collection;
 use ZnCore\Domain\Entity\Helpers\CollectionHelper;
 use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
@@ -40,7 +41,7 @@ class AssignmentService extends BaseCrudService implements AssignmentServiceInte
         return CollectionHelper::getColumn($collection, 'item_name');
     }
 
-    public function allByIdentityId(int $identityId, Query $query = null): Collection
+    public function allByIdentityId(int $identityId, Query $query = null): Enumerable
     {
         $collection = $this->getRepository()->allByIdentityId($identityId, $query);
         return $collection;

@@ -2,6 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Repositories\Eloquent;
 
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 use ZnCore\Domain\Collection\Libs\Collection;
 use ZnBundle\Person\Domain\Interfaces\Repositories\ContactTypeRepositoryInterface;
 use ZnCore\Domain\Query\Entities\Query;
@@ -37,7 +38,7 @@ class AssignmentRepository extends BaseEloquentCrudRepository implements Assignm
         ];
     }
 
-    public function allByIdentityId(int $identityId, Query $query = null): Collection
+    public function allByIdentityId(int $identityId, Query $query = null): Enumerable
     {
         $query = $this->forgeQuery($query);
         $query->where('identity_id', $identityId);
