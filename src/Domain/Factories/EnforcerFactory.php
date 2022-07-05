@@ -8,6 +8,7 @@ use Casbin\Model\Model;
 use Casbin\Persist\Adapters\FileAdapter;
 use Casbin\Rbac\DefaultRoleManager\RoleManager;
 use Casbin\Rbac\RoleManager as RoleManagerContract;
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 use ZnCore\Domain\Collection\Libs\Collection;
 use ZnCore\Domain\Entity\Helpers\CollectionHelper;
 use ZnCore\Domain\Entity\Helpers\EntityHelper;
@@ -15,7 +16,7 @@ use ZnCore\Domain\Entity\Helpers\EntityHelper;
 class EnforcerFactory
 {
 
-    public function createEnforcerByInheritanceCollection(Collection $collection): ManagementEnforcer
+    public function createEnforcerByInheritanceCollection(Enumerable $collection): ManagementEnforcer
     {
         $enforcer = $this->createEnforcer();
         $map = CollectionHelper::toArray($collection);
