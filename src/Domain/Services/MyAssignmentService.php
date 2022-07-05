@@ -3,11 +3,10 @@
 namespace ZnUser\Rbac\Domain\Services;
 
 use ZnCore\Domain\Collection\Interfaces\Enumerable;
-use ZnCore\Domain\Collection\Libs\Collection;
-use ZnUser\Authentication\Domain\Interfaces\Services\AuthServiceInterface;
-use ZnCore\Domain\Service\Base\BaseService;
 use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\Domain\Query\Entities\Query;
+use ZnCore\Domain\Service\Base\BaseService;
+use ZnUser\Authentication\Domain\Interfaces\Services\AuthServiceInterface;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
 use ZnUser\Rbac\Domain\Entities\MyAssignmentEntity;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\MyAssignmentRepositoryInterface;

@@ -2,18 +2,15 @@
 
 namespace ZnUser\Rbac\Domain\Services;
 
-use ZnCore\Domain\Collection\Interfaces\Enumerable;
-use ZnCore\Domain\Collection\Libs\Collection;
-use ZnCore\Domain\Entity\Helpers\CollectionHelper;
+use ZnCore\Base\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
-use ZnLib\Components\Status\Enums\StatusEnum;
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 use ZnCore\Domain\Entity\Exceptions\AlreadyExistsException;
 use ZnCore\Domain\Entity\Exceptions\NotFoundException;
-use ZnCore\Domain\Service\Base\BaseCrudService;
-use ZnCore\Base\Validation\Exceptions\UnprocessibleEntityException;
-use ZnCore\Domain\Entity\Helpers\EntityHelper;
+use ZnCore\Domain\Entity\Helpers\CollectionHelper;
 use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\Domain\Query\Entities\Query;
+use ZnCore\Domain\Service\Base\BaseCrudService;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
 use ZnUser\Rbac\Domain\Entities\ItemEntity;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\AssignmentRepositoryInterface;
@@ -47,28 +44,33 @@ class AssignmentService extends BaseCrudService implements AssignmentServiceInte
         return $collection;
     }
 
-    public function attach(AssignmentEntity $assignmentEntity) {
+    public function attach(AssignmentEntity $assignmentEntity)
+    {
         $this->checkExists($assignmentEntity);
         $this->validate($assignmentEntity);
         $this->getEntityManager()->persist($assignmentEntity);
     }
 
-    public function detach(AssignmentEntity $assignmentEntity) {
+    public function detach(AssignmentEntity $assignmentEntity)
+    {
         $this->validate($assignmentEntity);
         $this->getEntityManager()->remove($assignmentEntity);
     }
 
-    private function checkExists(AssignmentEntity $assignmentEntity) {
+    private function checkExists(AssignmentEntity $assignmentEntity)
+    {
         $assignmentQuery = new Query();
         $assignmentQuery->where('item_name', $assignmentEntity->getItemName());
         $assignmentQuery->where('identity_id', $assignmentEntity->getIdentityId());
         try {
             $assignmentEntity = $this->getEntityManager()->getRepository(AssignmentEntity::class)->findOne($assignmentQuery);
             throw new AlreadyExistsException('Assignment already exists');
-        } catch (NotFoundException $e) {}
+        } catch (NotFoundException $e) {
+        }
     }
 
-    private function validate(AssignmentEntity $assignmentEntity) {
+    private function validate(AssignmentEntity $assignmentEntity)
+    {
         $unprocessibleEntityException = new UnprocessibleEntityException();
 
         try {
@@ -85,7 +87,7 @@ class AssignmentService extends BaseCrudService implements AssignmentServiceInte
             $unprocessibleEntityException->add('itemName', 'Item not found');
         }
 
-        if($unprocessibleEntityException->getErrorCollection() && $unprocessibleEntityException->getErrorCollection()->count() > 0) {
+        if ($unprocessibleEntityException->getErrorCollection() && $unprocessibleEntityException->getErrorCollection()->count() > 0) {
             throw $unprocessibleEntityException;
         }
     }

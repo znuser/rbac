@@ -2,12 +2,10 @@
 
 namespace ZnUser\Rbac\Domain\Libs;
 
-use ZnCore\Domain\Collection\Libs\Collection;
-use ZnCore\Base\Instance\Exceptions\NotInstanceOfException;
-use ZnCore\Base\Instance\Helpers\ClassHelper;
 use ZnCore\Base\Enum\Helpers\EnumHelper;
-use ZnCore\Base\Enum\Interfaces\GetLabelsInterface;
+use ZnCore\Base\Instance\Helpers\ClassHelper;
 use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 use ZnUser\Rbac\Domain\Entities\InheritanceEntity;
 use ZnUser\Rbac\Domain\Entities\ItemEntity;
 use ZnUser\Rbac\Domain\Enums\ItemTypeEnum;
@@ -18,10 +16,10 @@ class MapItem
 
     private $authItem;
 
-    /** @var Collection */
+    /** @var Enumerable */
     private $items;
 
-    /** @var Collection */
+    /** @var Enumerable */
     private $inheritance;
 
     public function __construct(InheritanceMapInterface $authItem)
@@ -71,8 +69,9 @@ class MapItem
         $this->assignInheritance($enumClassName);
     }
 
-    protected function assignInheritance(string $enumClassName) {
-        if(ClassHelper::instanceOf($enumClassName, GetRbacInheritanceInterface::class, true)) {
+    protected function assignInheritance(string $enumClassName)
+    {
+        if (ClassHelper::instanceOf($enumClassName, GetRbacInheritanceInterface::class, true)) {
             /** @var GetRbacInheritanceInterface $enumClassName */
             $inheritance = $enumClassName::getInheritance();
             foreach ($inheritance as $parentName => $children) {

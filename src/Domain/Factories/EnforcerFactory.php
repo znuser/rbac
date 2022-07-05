@@ -5,13 +5,10 @@ namespace ZnUser\Rbac\Domain\Factories;
 use Casbin\Enforcer;
 use Casbin\ManagementEnforcer;
 use Casbin\Model\Model;
-use Casbin\Persist\Adapters\FileAdapter;
 use Casbin\Rbac\DefaultRoleManager\RoleManager;
 use Casbin\Rbac\RoleManager as RoleManagerContract;
 use ZnCore\Domain\Collection\Interfaces\Enumerable;
-use ZnCore\Domain\Collection\Libs\Collection;
 use ZnCore\Domain\Entity\Helpers\CollectionHelper;
-use ZnCore\Domain\Entity\Helpers\EntityHelper;
 
 class EnforcerFactory
 {
