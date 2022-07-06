@@ -3,8 +3,8 @@
 namespace ZnUser\Rbac\Domain\Interfaces\Repositories;
 
 use ZnCore\Collection\Interfaces\Enumerable;
-use ZnCore\Domain\Query\Entities\Query;
-use ZnCore\Domain\Repository\Interfaces\CrudRepositoryInterface;
+use ZnCore\Query\Entities\Query;
+use ZnCore\Repository\Interfaces\CrudRepositoryInterface;
 
 interface AssignmentRepositoryInterface extends CrudRepositoryInterface
 {

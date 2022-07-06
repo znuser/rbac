@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Helpers;
 
-use ZnCore\Base\Arr\Helpers\ArrayHelper;
+use ZnCore\Arr\Helpers\ArrayHelper;
 use ZnCore\Container\Helpers\ContainerHelper;
 use ZnCore\Base\ConfigManager\Interfaces\ConfigManagerInterface;
 

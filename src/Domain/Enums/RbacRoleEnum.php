@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Enums;
 
-use ZnCore\Base\Enum\Interfaces\GetLabelsInterface;
+use ZnCore\Enum\Interfaces\GetLabelsInterface;
 use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
 use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
 

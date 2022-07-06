@@ -4,8 +4,8 @@ namespace ZnUser\Rbac\Domain\Services;
 
 use ZnCore\Collection\Interfaces\Enumerable;
 use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Domain\Query\Entities\Query;
-use ZnCore\Domain\Service\Base\BaseService;
+use ZnCore\Query\Entities\Query;
+use ZnCore\Service\Base\BaseService;
 use ZnUser\Authentication\Domain\Interfaces\Services\AuthServiceInterface;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
 use ZnUser\Rbac\Domain\Entities\MyAssignmentEntity;

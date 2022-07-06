@@ -2,8 +2,8 @@
 
 namespace ZnUser\Rbac\Domain\Libs;
 
-use ZnCore\Base\Enum\Helpers\EnumHelper;
-use ZnCore\Base\Instance\Helpers\ClassHelper;
+use ZnCore\Enum\Helpers\EnumHelper;
+use ZnCore\Instance\Helpers\ClassHelper;
 use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
 use ZnCore\Collection\Interfaces\Enumerable;
 use ZnUser\Rbac\Domain\Entities\InheritanceEntity;

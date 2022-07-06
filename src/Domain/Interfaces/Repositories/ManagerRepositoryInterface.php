@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Interfaces\Repositories;
 
-use ZnCore\Domain\Repository\Interfaces\RepositoryInterface;
+use ZnCore\Repository\Interfaces\RepositoryInterface;
 
 interface ManagerRepositoryInterface extends RepositoryInterface
 {
