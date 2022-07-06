@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Interfaces\Services;
 
-use ZnCore\Domain\Collection\Interfaces\Enumerable;
+use ZnCore\Collection\Interfaces\Enumerable;
 use ZnCore\Domain\Query\Entities\Query;
 use ZnCore\Domain\Service\Interfaces\CrudServiceInterface;
 

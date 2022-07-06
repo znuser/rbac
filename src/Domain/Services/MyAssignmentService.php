@@ -2,8 +2,8 @@
 
 namespace ZnUser\Rbac\Domain\Services;
 
-use ZnCore\Domain\Collection\Interfaces\Enumerable;
-use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
+use ZnCore\Collection\Interfaces\Enumerable;
+use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\Domain\Query\Entities\Query;
 use ZnCore\Domain\Service\Base\BaseService;
 use ZnUser\Authentication\Domain\Interfaces\Services\AuthServiceInterface;

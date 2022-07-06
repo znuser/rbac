@@ -5,7 +5,7 @@ namespace ZnUser\Rbac\Domain\Libs;
 use ZnCore\Base\Enum\Helpers\EnumHelper;
 use ZnCore\Base\Instance\Helpers\ClassHelper;
 use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
-use ZnCore\Domain\Collection\Interfaces\Enumerable;
+use ZnCore\Collection\Interfaces\Enumerable;
 use ZnUser\Rbac\Domain\Entities\InheritanceEntity;
 use ZnUser\Rbac\Domain\Entities\ItemEntity;
 use ZnUser\Rbac\Domain\Enums\ItemTypeEnum;
