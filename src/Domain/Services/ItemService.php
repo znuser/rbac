@@ -3,8 +3,8 @@
 namespace ZnUser\Rbac\Domain\Services;
 
 use ZnUser\Rbac\Domain\Interfaces\Services\ItemServiceInterface;
-use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Service\Base\BaseCrudService;
+use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
+use ZnDomain\Service\Base\BaseCrudService;
 use ZnUser\Rbac\Domain\Entities\ItemEntity;
 
 class ItemService extends BaseCrudService implements ItemServiceInterface

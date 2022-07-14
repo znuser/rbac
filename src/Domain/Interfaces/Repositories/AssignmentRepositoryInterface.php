@@ -4,7 +4,7 @@ namespace ZnUser\Rbac\Domain\Interfaces\Repositories;
 
 use ZnCore\Collection\Interfaces\Enumerable;
 use ZnCore\Query\Entities\Query;
-use ZnCore\Repository\Interfaces\CrudRepositoryInterface;
+use ZnDomain\Repository\Interfaces\CrudRepositoryInterface;
 
 interface AssignmentRepositoryInterface extends CrudRepositoryInterface
 {

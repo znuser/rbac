@@ -4,7 +4,7 @@ namespace ZnUser\Rbac\Domain\Interfaces\Services;
 
 use ZnCore\Collection\Interfaces\Enumerable;
 use ZnCore\Query\Entities\Query;
-use ZnCore\Service\Interfaces\CrudServiceInterface;
+use ZnDomain\Service\Interfaces\CrudServiceInterface;
 
 interface AssignmentServiceInterface extends CrudServiceInterface
 {
