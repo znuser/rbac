@@ -7,7 +7,7 @@ use ZnUser\Rbac\Domain\Entities\PermissionEntity;
 use ZnUser\Rbac\Domain\Entities\RoleEntity;
 use ZnUser\Rbac\Domain\Enums\ItemTypeEnum;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\RoleRepositoryInterface;
-use ZnLib\Components\Store\Base\BaseFileCrudRepository;
+use ZnDomain\Сomponents\FileRepository\Base\BaseFileCrudRepository;
 
 class PermissionRepository extends ItemRepository implements RoleRepositoryInterface
 {

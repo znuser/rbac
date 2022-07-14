@@ -6,7 +6,7 @@ use ZnUser\Rbac\Domain\Entities\ItemEntity;
 use ZnUser\Rbac\Domain\Entities\RoleEntity;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\RoleRepositoryInterface;
-use ZnLib\Components\Store\Base\BaseFileCrudRepository;
+use ZnDomain\Сomponents\FileRepository\Base\BaseFileCrudRepository;
 
 class ItemRepository extends BaseFileCrudRepository implements ItemRepositoryInterface
 {
