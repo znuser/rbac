@@ -8,7 +8,7 @@ use Casbin\Model\Model;
 use Casbin\Rbac\DefaultRoleManager\RoleManager;
 use Casbin\Rbac\RoleManager as RoleManagerContract;
 use ZnCore\Collection\Interfaces\Enumerable;
-use ZnDomain\Entity\Helpers\CollectionHelper;
+use ZnCore\Collection\Helpers\CollectionHelper;
 
 class EnforcerFactory
 {
