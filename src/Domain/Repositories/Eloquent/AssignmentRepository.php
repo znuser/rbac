@@ -3,7 +3,7 @@
 namespace ZnUser\Rbac\Domain\Repositories\Eloquent;
 
 use ZnCore\Collection\Interfaces\Enumerable;
-use ZnCore\Query\Entities\Query;
+use ZnDomain\Query\Entities\Query;
 use ZnDomain\Relation\Libs\Types\OneToOneRelation;
 use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;

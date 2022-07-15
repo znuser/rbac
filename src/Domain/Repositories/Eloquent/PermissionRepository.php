@@ -2,7 +2,7 @@
 
 namespace ZnUser\Rbac\Domain\Repositories\Eloquent;
 
-use ZnCore\Query\Entities\Query;
+use ZnDomain\Query\Entities\Query;
 use ZnUser\Rbac\Domain\Entities\ItemEntity;
 use ZnUser\Rbac\Domain\Entities\PermissionEntity;
 use ZnUser\Rbac\Domain\Enums\ItemTypeEnum;

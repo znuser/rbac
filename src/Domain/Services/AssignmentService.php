@@ -2,14 +2,14 @@
 
 namespace ZnUser\Rbac\Domain\Services;
 
-use ZnCore\Validation\Exceptions\UnprocessibleEntityException;
+use ZnDomain\Validator\Exceptions\UnprocessibleEntityException;
 use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
 use ZnCore\Collection\Interfaces\Enumerable;
-use ZnCore\Entity\Exceptions\AlreadyExistsException;
-use ZnCore\Entity\Exceptions\NotFoundException;
-use ZnCore\Entity\Helpers\CollectionHelper;
+use ZnDomain\Entity\Exceptions\AlreadyExistsException;
+use ZnDomain\Entity\Exceptions\NotFoundException;
+use ZnDomain\Entity\Helpers\CollectionHelper;
 use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Query\Entities\Query;
+use ZnDomain\Query\Entities\Query;
 use ZnDomain\Service\Base\BaseCrudService;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
 use ZnUser\Rbac\Domain\Entities\ItemEntity;

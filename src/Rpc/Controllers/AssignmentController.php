@@ -2,8 +2,8 @@
 
 namespace ZnUser\Rbac\Rpc\Controllers;
 
-use ZnCore\Entity\Helpers\CollectionHelper;
-use ZnCore\Entity\Helpers\EntityHelper;
+use ZnDomain\Entity\Helpers\CollectionHelper;
+use ZnDomain\Entity\Helpers\EntityHelper;
 use ZnLib\Rpc\Domain\Entities\RpcRequestEntity;
 use ZnLib\Rpc\Domain\Entities\RpcResponseEntity;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
