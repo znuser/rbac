@@ -1,10 +1,6 @@
 <?php
 
-use ZnCore\Env\Helpers\EnvHelper;
 use Psr\Container\ContainerInterface;
-use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
-use ZnUser\Rbac\Domain\Interfaces\Services\ManagerServiceInterface;
-use ZnUser\Rbac\Domain\Services\ManagerService;
 
 $isDbDriver = true;
 //$isDbDriver = !EnvHelper::isDev();
@@ -49,6 +45,6 @@ return [
 //        },
     ],
     'entities' => [
-        
-	],
+
+    ],
 ];

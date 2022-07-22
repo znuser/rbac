@@ -2,9 +2,12 @@
 
 namespace ZnUser\Rbac\Domain\Enums;
 
+use ZnCore\Code\Helpers\DeprecateHelper;
 use ZnCore\Enum\Interfaces\GetLabelsInterface;
 use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
 use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
+
+DeprecateHelper::hardThrow();
 
 class RbacRoleEnum implements GetLabelsInterface, GetRbacInheritanceInterface
 {
