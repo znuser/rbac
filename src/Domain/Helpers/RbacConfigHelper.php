@@ -3,8 +3,8 @@
 namespace ZnUser\Rbac\Domain\Helpers;
 
 use ZnCore\Arr\Helpers\ArrayHelper;
-use ZnCore\Container\Helpers\ContainerHelper;
 use ZnCore\ConfigManager\Interfaces\ConfigManagerInterface;
+use ZnCore\Container\Helpers\ContainerHelper;
 
 class RbacConfigHelper
 {
