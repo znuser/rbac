@@ -22,4 +22,12 @@ class MyAssignmentController
         $response->setResult($resultArray);
         return $response;
     }
+
+    public function allPermissions(RpcRequestEntity $requestEntity): RpcResponseEntity
+    {
+        $resultArray = $this->service->allPermissions();
+        $response = new RpcResponseEntity();
+        $response->setResult($resultArray);
+        return $response;
+    }
 }

@@ -11,6 +11,7 @@ use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
 use ZnUser\Rbac\Domain\Entities\MyAssignmentEntity;
 use ZnUser\Rbac\Domain\Interfaces\Repositories\MyAssignmentRepositoryInterface;
 use ZnUser\Rbac\Domain\Interfaces\Services\AssignmentServiceInterface;
+use ZnUser\Rbac\Domain\Interfaces\Services\ManagerServiceInterface;
 use ZnUser\Rbac\Domain\Interfaces\Services\MyAssignmentServiceInterface;
 
 /**
@@ -21,16 +22,19 @@ class MyAssignmentService extends BaseService implements MyAssignmentServiceInte
 
     private $authService;
     private $assignmentService;
+    private $managerService;
 
     public function __construct(
         EntityManagerInterface $em,
         AuthServiceInterface $authService,
-        AssignmentServiceInterface $assignmentService
+        AssignmentServiceInterface $assignmentService, 
+        ManagerServiceInterface $managerService
     )
     {
         $this->setEntityManager($em);
         $this->authService = $authService;
         $this->assignmentService = $assignmentService;
+        $this->managerService = $managerService;
     }
 
     public function getEntityClass(): string
@@ -50,5 +54,12 @@ class MyAssignmentService extends BaseService implements MyAssignmentServiceInte
     {
         $identityId = $this->authService->getIdentity()->getId();
         return $this->assignmentService->getRolesByIdentityId($identityId);
+    }
+
+    public function allPermissions(): array
+    {
+        $identityId = $this->authService->getIdentity()->getId();
+        $roles = $this->assignmentService->getRolesByIdentityId($identityId);
+        return $this->managerService->allNestedItemsByRoleNames($roles);
     }
 }
